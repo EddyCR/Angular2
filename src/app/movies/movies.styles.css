@@ -1,0 +1,11 @@
+.movies ul {
+	list-style: none;
+	width: 100%;
+}
+
+.movies ul::after{
+	clear: both;
+	display: block;
+	height: 1px;
+	content: '';
+}

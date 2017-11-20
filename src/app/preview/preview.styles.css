@@ -1,0 +1,26 @@
+.preview {
+	border: 1px solid grey;
+	padding: 5%;
+}
+
+.preview img{
+	width: 100%;
+}
+
+.preview button, a{
+	border: 1px solid #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+.preview button:hover, a:hover{
+	background: #e50914;
+	color: #141414;
+	border: 1px solid #e50914;
+}
+
+.preview a{
+	text-decoration: none;
+    margin-top: 5px;
+    display: inline-block;
+}

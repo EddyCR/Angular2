@@ -1,0 +1,13 @@
+<div class="preview">
+	<img [src]="mov.backdrop_path" [alt]="mov.title">
+	<h1>{{mov.title}}</h1>
+	<p>{{mov.overview}}</p>
+	<!-- <button *ngIf="movieVideos" >Ver trailer</button> -->
+	<a *ngIf="videos.length > 0" href="{{videos[0].video_url}}" target="_blanck">Ver trailer</a>
+	<p *ngIf="!videos"> Trailer no disponible</p>
+
+<!-- 	<img [src]="mov.imgUrl" [alt]="mov.title">
+	<h1>{{mov.name}}</h1>
+	<p>{{mov.description}}</p>
+	<button>Ver trailer</button> -->
+</div>
