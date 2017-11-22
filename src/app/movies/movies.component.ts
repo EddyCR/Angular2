@@ -19,31 +19,20 @@ export class MoviesComponent implements OnInit{
 
 	constructor(private http: HttpClient, private sm: MoviesService, private config: Configurations){}
 
-	vm = this;
-
 	ngOnInit(){
-		//this.list = this.sm.getMovies();
+		this.list = this.sm.getMovies();
 
-	    // this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`).subscribe(data => {
-	    //   	// Read the result field from the JSON response.
+	    // this.sm.getMovies().subscribe(data => {
 	    //   	this.ListMovies = data['results'];
-	    //   	this.ListMovies.map(function(movie){
-	    //   		movie.backdrop_path = `${base_url}/${backdrop_size}${movie.backdrop_path}`;
-	    //   		movie.poster_path =`${base_url}/${poster_size}${movie.poster_path}`;
-	    //   	});
+	    //   	this.ListMovies.map( movie =>{
+	    //   		movie.backdrop_path = `${this.config.base_url}/${this.config.backdrop_size}${movie.backdrop_path}`;
+	    //   		movie.poster_path =`${this.config.base_url}/${this.config.poster_size}${movie.poster_path}`;
+	    //   	}) 
 	    // });
-
-	    this.sm.getMovies().subscribe(data => {
-	      	this.ListMovies = data['results'];
-	      	this.ListMovies.map( movie =>{
-	      		movie.backdrop_path = `${this.config.base_url}/${this.config.backdrop_size}${movie.backdrop_path}`;
-	      		movie.poster_path =`${this.config.base_url}/${this.config.poster_size}${movie.poster_path}`;
-	      	}) 
-	    });
 	}
 
-	getMovie(movie: Movie){
-		this.getVideo(movie.id);
+	getMovie(movie){
+		//this.getVideo(movie.id);
 		this.selectedMovie = movie;
 		console.log('selected',this.selectedMovie);
 	}	

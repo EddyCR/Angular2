@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 import { Movie } from '../movie/movie';
+import { DownloadComponent } from '../download/download.component';
 
 @Component({
 	selector: 'preview',
@@ -11,6 +12,8 @@ import { Movie } from '../movie/movie';
 export class PreviewComponent{
 	//Inputs pasados por medio de la directiva/html
 	@Input() mov: Movie;
-	@Input() videos: Array<{}>;
+	//@Input() videos: Array<{}>;
 
+	// Se acede a toda la implementación del component hijo
+	@ViewChild(DownloadComponent) dwn: DownloadComponent ;
 }

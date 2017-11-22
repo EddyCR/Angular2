@@ -1,11 +1,11 @@
-<li>
-	<img [src]="mov.poster_path" [alt]="mov.title">
+<li [newArrival]="mov.arrival">
+<!-- 	<img [src]="mov.poster_path" [alt]="mov.title">
 	<h2>{{mov.title}}</h2>
 	<p>{{mov.overview}}</p>
-	<button (click)="selectMovie(mov)">Ver película</button>
+	<button (click)="selectMovie(mov)">Ver película</button> -->
 
-<!-- 	<img [src]="mov.imgUrl" [alt]="mov.title">
+	<img [src]="mov.imgUrl" [alt]="mov.title">
 	<h2>{{mov.name}}</h2>
 	<p>{{mov.description}}</p>
-	<button (click)="selectMovie(mov)">Ver película</button> -->
+	<button (click)="selectMovie(mov)">Ver película</button>
 </li>

@@ -11,7 +11,7 @@ export class MovieComponent{
 	@Input() mov: Movie;
 	@Output() selectedMovieEvent: EventEmitter<Movie> = new EventEmitter<Movie>();
 
-	selectMovie(movie: Movie){
+	selectMovie(movie){
 		this.selectedMovieEvent.emit(movie);
 	}
 }
