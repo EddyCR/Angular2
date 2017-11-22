@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Movie } from '../movie/movie';
 import { MoviesService } from './movies.service';
-import { Configurations } from '../main.configuration';
+import { Configurations } from '../general/configurations.service';
 
 @Component({
 	selector: 'movies',

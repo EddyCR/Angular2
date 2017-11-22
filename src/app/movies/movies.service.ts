@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { Movie } from '../movie/movie';
-import { Configurations } from '../main.configuration';
+import { Configurations } from '../general/configurations.service';
 
 let movies: Movie[] = [
 	new Movie(1,'Alias Grace','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, quidem!','./assets/movie1.webp','./assets/bg1.webp', true),
 	new Movie(2,'Sense 8','Lorem ipsum dolor sit amet.','./assets/movie2.webp','./assets/bg2.webp', false),
 	new Movie(3,'The Sinner','Lorem ipsum dolor sit amet, consectetur.','./assets/movie3.webp','./assets/bg3.webp', false),
 	new Movie(4,'Black mirror','Lorem ipsum dolor sit amet, consectetur adipisicing.','./assets/movie4.webp','./assets/bg4.webp', true),
-	new Movie(5,'Van Helsing','Lorem ipsum dolor sit amet, consectetur adipisicing elit.','./assets/movie5.webp','./assets/bg5.webp', true)
+	new Movie(5,'Van Helsing','Lorem ipsum dolor sit amet, consectetur adipisicing elit.','./assets/movie5.webp','./assets/bg5.webp', false)
 ]
 
 @Injectable()

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-const priceDollar: number = 575;
-const priceMovie: number = 300;
+const priceDollar: number = 575,
+	  priceMovie: number = 300;
 
 @Injectable()
 export class PricingService{
