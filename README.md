@@ -1,6 +1,6 @@
 # Netflixdev
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0. and it's a personal project in order to be able to practice Angular 2
 
 ## Development server
 
