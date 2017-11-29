@@ -2,6 +2,6 @@
 	<preview *ngIf="selectedMovie" [mov]="selectedMovie"></preview>
 	<!-- <preview *ngIf="selectedMovie" [mov]="selectedMovie" [videos]="movieVideos"></preview> -->
 	<ul>
-		<movie (selectedMovieEvent)="getMovie($event)" *ngFor="let movie of list" [mov]="movie"></movie>	
+		<movie (selectedMovieEvent)="getMovie($event)" *ngFor="let movie of (list | newArrivals)" [mov]="movie"></movie>	
 	</ul>
 </section>

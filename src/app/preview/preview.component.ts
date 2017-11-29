@@ -2,6 +2,7 @@ import { Component, Input, ViewChild } from '@angular/core';
 
 import { Movie } from '../movie/movie';
 import { DownloadComponent } from '../download/download.component';
+import { ConnService } from '../general/connection.service';
 
 @Component({
 	selector: 'preview',
@@ -16,4 +17,11 @@ export class PreviewComponent{
 
 	// Se acede a toda la implementación del component hijo
 	@ViewChild(DownloadComponent) dwn: DownloadComponent ;
+
+	constructor(private conn: ConnService){};
+
+	addMovie(){
+		this.conn.sendNotification('Add movie');
+	}
 }
+

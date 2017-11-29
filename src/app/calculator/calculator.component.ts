@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PricingService } from '../general/pricing.service';
+import { ConnService } from '../general/connection.service';
+
 
 @Component({
 	selector: 'calculator',
@@ -11,12 +13,14 @@ import { PricingService } from '../general/pricing.service';
 export class CalculatorComponent implements OnInit{
 	cantidad: number = 0;
 	valMovie: number;
-	priceDollar: number;
 
-	constructor(private ps: PricingService){}
+	constructor(private ps: PricingService, private conn: ConnService){}
 
 	ngOnInit(){
 		this.valMovie = this.ps.getPriceMovie();
-		this.priceDollar = this.ps.getDollar();
+
+		this.conn.observable.subscribe(msg=>{
+			console.log('Información recibida: ',msg);
+		});
 	}
 }

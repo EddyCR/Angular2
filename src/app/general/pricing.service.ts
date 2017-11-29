@@ -5,11 +5,11 @@ const priceDollar: number = 575,
 
 @Injectable()
 export class PricingService{
-	getDollar(){
+	getDollar(): number{
 		return priceDollar;
 	}
 
-	getPriceMovie(){
+	getPriceMovie(): number{
 		return priceMovie;
 	}
 }

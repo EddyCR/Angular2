@@ -15,9 +15,15 @@ import { DownloadComponent } from './download/download.component';
 import { MoviesService } from './movies/movies.service';
 import { Configurations } from './general/configurations.service';
 import { PricingService } from './general/pricing.service';
+import { ConnService } from './general/connection.service';
+
 
 // Directives
 import { ArrivalDirective } from './movie/movie.directive';
+
+// Pipe
+import { MembershipPipe } from './general/membership.pipe';
+import { NewArrivalsPipe } from './general/new-arrivals.pipe';
 
 @NgModule({
 	declarations: [MainComponent,
@@ -26,9 +32,14 @@ import { ArrivalDirective } from './movie/movie.directive';
 		MovieComponent,
 		PreviewComponent,
 		DownloadComponent,
-		ArrivalDirective],
+		ArrivalDirective,
+		MembershipPipe,
+		NewArrivalsPipe],
 	imports:[ BrowserModule, HttpClientModule, FormsModule ],
-	providers: [MoviesService, Configurations, PricingService],
+	providers: [MoviesService, 
+		Configurations, 
+		PricingService,
+		ConnService],
 	bootstrap: [MainComponent]
 })
 

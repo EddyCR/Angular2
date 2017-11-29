@@ -6,6 +6,6 @@
 			<input type="text" [(ngModel)]="cantidad"> películas.
 		</label>
 		<p class="info">Valor de la película {{ valMovie }} colones.</p>
-		<p class="total">Valor total de la membresía: {{ (cantidad*valMovie)/priceDollar | currency }} *IVA</p>
+		<p class="total">Valor total de la membresía: {{ cantidad | membership | currency }} *IVA</p>
 		<p class="info">*Impuesto de ventas incluído.</p>
 	</section>

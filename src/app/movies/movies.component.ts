@@ -12,7 +12,7 @@ import { Configurations } from '../general/configurations.service';
 })
 
 export class MoviesComponent implements OnInit{
-	list: Movie[];
+	list: Movie[] = [];
 	ListMovies;
 	selectedMovie: Movie;
 	movieVideos: Array<{}> = new Array<{}>(); 
@@ -20,7 +20,9 @@ export class MoviesComponent implements OnInit{
 	constructor(private http: HttpClient, private sm: MoviesService, private config: Configurations){}
 
 	ngOnInit(){
-		this.list = this.sm.getMovies();
+		this.sm.getMovies().subscribe((data:Movie[])=>{
+			this.list = data;
+		})
 
 	    // this.sm.getMovies().subscribe(data => {
 	    //   	this.ListMovies = data['results'];

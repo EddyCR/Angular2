@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs';
 
 import { Movie } from '../movie/movie';
 import { Configurations } from '../general/configurations.service';
@@ -14,12 +15,28 @@ let movies: Movie[] = [
 ]
 
 @Injectable()
-
 export class MoviesService{
 	constructor(private http: HttpClient, private config: Configurations ){};
-	
+	listMovies: Movie[];
+
+	private source = new Subject();
+	observable = this.source.asObservable(); 
+
 	getMovies(){
-		return movies;
+		//listMovies: Array <Movie>= new Array<Movie>();
+
+		this.http.get('http://la404.com/api/?movies').subscribe((data) =>{
+			this.listMovies = data.map(mov=>{
+				return new Movie(mov[0],mov[1],mov[2],mov[3],mov[4],mov[5]);
+			})
+			this.source.next(this.listMovies);
+		})
+
+		return this.observable;
+	}
+
+	sendData(data){
+		this.source.next(data);
 	}
 
 	// public getMovies <T>(): Observable <T>{
